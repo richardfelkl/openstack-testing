@@ -12,9 +12,9 @@ mask_minor_pkgs = []
 groups = {}
 
 for node_name, node_pkgs in pkgs_info.items():
-    group_name = node_name.split('-')[0]
+    group_name = node_name.split('0')[0]
     if not groups.has_key(group_name):
-        groups[group_name] = []
+        groups[group_name] = [(node_name, node_pkgs)]
     else:
         groups[group_name].append((node_name, node_pkgs))
 
